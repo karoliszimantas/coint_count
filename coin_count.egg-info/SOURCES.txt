@@ -1,0 +1,6 @@
+coin_count.py
+setup.py
+coin_count.egg-info/PKG-INFO
+coin_count.egg-info/SOURCES.txt
+coin_count.egg-info/dependency_links.txt
+coin_count.egg-info/top_level.txt
