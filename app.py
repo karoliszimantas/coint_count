@@ -2,18 +2,19 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
-def coin_count(amount=75, coins=[1, 4, 15, 20]):
-    'returned from a given sum amount in the number of coins'
+@app.route('/coin_count/<int:amount>', methods=['GET'])
+def coin_count(amount):
+    '''returned from a given sum amount in the number of coins'''
+    coins = [1, 4, 15, 20]
     remaining_amount = amount
     denomination = []
     counts = []
 
-    #creating list of used coins and counts
+    # creating list of used coins and counts
     for coin in sorted(coins, reverse=True):
         num = remaining_amount / coin
         if num:
-            denomination.append((coin))
+            denomination.append(coin)
             count_id = remaining_amount // coin
             counts.append(count_id)
             remaining_amount -= count_id * coin

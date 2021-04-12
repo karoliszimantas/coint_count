@@ -1,8 +1,8 @@
-'''Application prints a change to be returned from a given sum amount in the number of coins.'''
+'Application prints a change to be returned from a given sum amount in the number of coins.'
 
 
 def coin_count(amount, coins=[1, 4, 15, 20]):
-    'returned from a given sum amount in the number of coins'
+    '''returned from a given sum amount in the number of coins'''
     remaining_amount = amount
     denomination = []
     counts = []
@@ -11,7 +11,7 @@ def coin_count(amount, coins=[1, 4, 15, 20]):
     for coin in sorted(coins, reverse=True):
         num = remaining_amount / coin
         if num:
-            denomination.append((coin))
+            denomination.append(coin)
             count_id = remaining_amount // coin
             counts.append(count_id)
             remaining_amount -= count_id * coin
@@ -26,4 +26,3 @@ def coin_count(amount, coins=[1, 4, 15, 20]):
         if value == 0:
             del final_dict[key]
     return final_dict
-
