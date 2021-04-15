@@ -1,13 +1,23 @@
-'Application prints a change to be returned from a given sum amount in the number of coins.'
+"""Application prints a change to be returned from a given sum amount in the number of coins."""
 
 
-def coin_count(amount, coins=[1, 4, 15, 20]):
-    '''returned from a given sum amount in the number of coins'''
+def coin_count(amount, coins=(1, 4, 15, 20)):
+    """returns number of coins from a given amount
+
+    :param amount:
+    :type amount: int
+
+    :param coins:
+    :type coins: tuple
+
+    :returns:
+    :rtype: dict
+    """
     remaining_amount = amount
     denomination = []
     counts = []
 
-    #creating list of used coins and counts
+    # creating list of used coins and counts
     for coin in sorted(coins, reverse=True):
         num = remaining_amount / coin
         if num:
